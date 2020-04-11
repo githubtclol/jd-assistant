@@ -1,5 +1,6 @@
 FROM python:3
-WORKDIR /jd-assistant
+WORKDIR /app
 ENV TZ Asia/Shanghai
-RUN git clone https://github.com/nicholastz/jd-assistantV2.git /jd-assistant && pip install -r requirements.txt
+RUN git clone https://github.com/nicholastz/jd-assistantV2.git /app  && pip install -r requirements.txt
+VOLUME /app
 CMD [ "python", "mainV2.py" ]
